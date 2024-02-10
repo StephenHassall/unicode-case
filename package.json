@@ -1,0 +1,20 @@
+{
+  "name": "unicode-case",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Information and code relating to the changing of Unicode characters between lower and upper case.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StephenHassall/unicode-case.git"
+  },
+  "author": "Stephen Paul Hassall",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/StephenHassall/unicode-case/issues"
+  },
+  "homepage": "https://github.com/StephenHassall/unicode-case#readme"
+}
