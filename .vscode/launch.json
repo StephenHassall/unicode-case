@@ -8,7 +8,8 @@
             "type": "node",
             "request": "launch",
             "name": "WASM Test",
-            "program": "${workspaceFolder}\\wasm\\test.js"
+            "program": "${workspaceFolder}\\wasm\\test.js",
+            "runtimeArgs": ["--preserve-symlinks"]
         }
     ]
 }

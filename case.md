@@ -5,12 +5,7 @@ Below is a list of all the characters in lower case and their matching upper cas
 1. [Basic Latin](#basic-latin)
 2. [Latin 1 Supplement](#latin-1-supplement)
 3. [Latin Extended A](#latin-extended-a)
-4. [Latin Extended B Non-European and Historic Latin](#latin-extended-b-non-european-and-historic-latin)
-5. [Latin Extended B Croatian](#latin-extended-b-croatian)
-6. [Latin Extended B Pinyin](#latin-extended-b-pinyin)
-7. [Latin Extended B Phonetic and Historic Letters](#latin-extended-b-phonetic-and-historic-letters)
-8. [Latin Extended B Slovenian and Croatian](#latin-extended-b-slovenian-and-croatian)
-9. [Latin Extended B Romanian](#latin-extended-b-romanian)
+4. [Latin Extended B](#latin-extended-b)
 
 ## Basic Latin
 
@@ -47,6 +42,7 @@ Below is a list of all the characters in lower case and their matching upper cas
 
 |Lower Value|Lower Char|Upper Value|Upper Char|
 |---|:---:|---|:---:|
+|`0x00DF`|&#x00DF;|`0x1E9E`|&#x1E9E;|
 |`0x00E0`|&#x00E0;|`0x00C0`|&#x00C0;|
 |`0x00E1`|&#x00E1;|`0x00C1`|&#x00C1;|
 |`0x00E2`|&#x00E2;|`0x00C2`|&#x00C2;|
@@ -77,14 +73,7 @@ Below is a list of all the characters in lower case and their matching upper cas
 |`0x00FC`|&#x00FC;|`0x00DC`|&#x00DC;|
 |`0x00FD`|&#x00FD;|`0x00DD`|&#x00DD;|
 |`0x00FE`|&#x00FE;|`0x00DE`|&#x00DE;|
-
-```
-// Lower to upper case
-if (character >= 0x00E0 && character <= 0x00FE && character !== 0x00D7) character -= 0x20
-
-// Upper to lower case
-if (character >= 0x00C0 && character <= 0x00DE && character !== 0x00D7) character += 0x20
-```
+|`0x00FF`|&#x00FF;|`0x0178`|&#x0178;|
 
 ## Latin Extended A
 
@@ -153,19 +142,7 @@ if (character >= 0x00C0 && character <= 0x00DE && character !== 0x00D7) characte
 |`0x017C`|&#x017C;|`0x017B`|&#x017B;|
 |`0x017E`|&#x017E;|`0x017D`|&#x017D;|
 
-```
-// Lower to upper case
-if (character >= 0x0101 && character <= 0x017D && character !== 0x0149) {
-    if (character % 2) character -= 1
-}
-
-// Upper to lower case
-if (character >= 0x0101 && character <= 0x017D && character !== 0x0149) {
-    if (!(character % 2)) character += 1
-}
-```
-
-## Latin Extended B Non-European and Historic Latin
+## Latin Extended B
 
 |Lower Value|Lower Char|Upper Value|Upper Char|
 |---|:---:|---|:---:|
@@ -185,81 +162,9 @@ if (character >= 0x0101 && character <= 0x017D && character !== 0x0149) {
 |`0x01B6`|&#x01B6;|`0x01B5`|&#x01B5;|
 |`0x01B9`|&#x01B9;|`0x01B8`|&#x01B8;|
 |`0x01BD`|&#x01BD;|`0x01BC`|&#x01BC;|
-
-```
-// Lower to upper case
-switch (character) {
-    case 0x0183:
-    case 0x0185:
-    case 0x0188:
-    case 0x018C:
-    case 0x0192:
-    case 0x0199:
-    case 0x01A1:
-    case 0x01A3:
-    case 0x01A5:
-    case 0x01A8:
-    case 0x01AD:
-    case 0x01B0:
-    case 0x01B4:
-    case 0x01B6:
-    case 0x01B9:
-    case 0x01BD:
-        character -= 1;
-}
-
-// Upper to lower case
-switch (character) {
-    case 0x0182:
-    case 0x0184:
-    case 0x0187:
-    case 0x018B:
-    case 0x0191:
-    case 0x0198:
-    case 0x01A0:
-    case 0x01A2:
-    case 0x01A4:
-    case 0x01A7:
-    case 0x01AC:
-    case 0x01AF:
-    case 0x01B3:
-    case 0x01B5:
-    case 0x01B8:
-    case 0x01BC:
-        character += 1;
-}
-```
-
-## Latin Extended B Croatian
-
-|Lower Value|Lower Char|Upper Value|Upper Char|
-|---|:---:|---|:---:|
 |`0x01C6`|&#x01C6;|`0x01C4`|&#x01C4;|
 |`0x01C9`|&#x01C9;|`0x01C7`|&#x01C7;|
 |`0x01CC`|&#x01CC;|`0x01CA`|&#x01CA;|
-
-```
-// Lower to upper case
-switch (character) {
-    case 0x01C6:
-    case 0x01C9:
-    case 0x01CC:
-        character -= 2;
-}
-
-// Upper to lower case
-switch (character) {
-    case 0x01C4:
-    case 0x01C7:
-    case 0x01CA:
-        character += 2;
-}
-```
-
-## Latin Extended B Pinyin
-
-|Lower Value|Lower Char|Upper Value|Upper Char|
-|---|:---:|---|:---:|
 |`0x01CE`|&#x01CE;|`0x01CD`|&#x01CD;|
 |`0x01D0`|&#x01D0;|`0x01CF`|&#x01CF;|
 |`0x01D2`|&#x01D2;|`0x01D1`|&#x01D1;|
@@ -268,39 +173,6 @@ switch (character) {
 |`0x01D8`|&#x01D8;|`0x01D7`|&#x01D7;|
 |`0x01DA`|&#x01DA;|`0x01D9`|&#x01D9;|
 |`0x01DC`|&#x01DC;|`0x01DB`|&#x01DB;|
-
-```
-// Lower to upper case
-switch (character) {
-    case 0x01CE:
-    case 0x01D0:
-    case 0x01D2:
-    case 0x01D4:
-    case 0x01D6:
-    case 0x01D8:
-    case 0x01DA:
-    case 0x01DC:
-        character -= 1;
-}
-
-// Upper to lower case
-switch (character) {
-    case 0x01CD:
-    case 0x01CF:
-    case 0x01D1:
-    case 0x01D3:
-    case 0x01D5:
-    case 0x01D7:
-    case 0x01D9:
-    case 0x01DB:
-        character += 1;
-}
-```
-
-## Latin Extended B Phonetic and Historic Letters
-
-|Lower Value|Lower Char|Upper Value|Upper Char|
-|---|:---:|---|:---:|
 |`0x01DF`|&#x01DF;|`0x01DE`|&#x01DE;|
 |`0x01E1`|&#x01E1;|`0x01E0`|&#x01E0;|
 |`0x01E3`|&#x01E3;|`0x01E2`|&#x01E2;|
@@ -312,54 +184,10 @@ switch (character) {
 |`0x01EF`|&#x01EF;|`0x01EE`|&#x01EE;|
 |`0x01F3`|&#x01F3;|`0x01F1`|&#x01F1;|
 |`0x01F5`|&#x01F5;|`0x01F4`|&#x01F4;|
+|`0x01F9`|&#x01F9;|`0x01F8`|&#x01F8;|
 |`0x01FB`|&#x01FB;|`0x01FA`|&#x01FA;|
 |`0x01FD`|&#x01FD;|`0x01FC`|&#x01FC;|
 |`0x01FF`|&#x01FF;|`0x01FE`|&#x01FE;|
-
-```
-// Lower to upper case
-switch (character) {
-    case 0x01DF:
-    case 0x01E1:
-    case 0x01E3:
-    case 0x01E5:
-    case 0x01E7:
-    case 0x01E9:
-    case 0x01EB:
-    case 0x01ED:
-    case 0x01EF:
-    case 0x01F3:
-    case 0x01F5:
-    case 0x01FB:
-    case 0x01FD:
-    case 0x01FF:
-        character -= 1;
-}
-
-// Upper to lower case
-switch (character) {
-    case 0x01DE:
-    case 0x01E0:
-    case 0x01E2:
-    case 0x01E4:
-    case 0x01E6:
-    case 0x01E8:
-    case 0x01EA:
-    case 0x01EC:
-    case 0x01EE:
-    case 0x01F1:
-    case 0x01F4:
-    case 0x01FA:
-    case 0x01FC:
-    case 0x01FE:
-        character += 1;
-}
-```
-
-## Latin Extended B Slovenian and Croatian
-
-|Lower Value|Lower Char|Upper Value|Upper Char|
-|---|:---:|---|:---:|
 |`0x0201`|&#x0201;|`0x0200`|&#x0200;|
 |`0x0203`|&#x0203;|`0x0202`|&#x0202;|
 |`0x0205`|&#x0205;|`0x0204`|&#x0204;|
@@ -372,43 +200,23 @@ switch (character) {
 |`0x0213`|&#x0213;|`0x0212`|&#x0212;|
 |`0x0215`|&#x0215;|`0x0214`|&#x0214;|
 |`0x0217`|&#x0217;|`0x0216`|&#x0216;|
-
-```
-// Lower to upper case
-if (character >= 0x0201 && character <= 0x0217) {
-    if (character % 2) character -= 1
-}
-
-// Upper to lower case
-if (character >= 0x0200 && character <= 0x0216) {
-    if (!(character % 2)) character += 1
-}
-```
-
-## Latin Extended B Romanian
-
-|Lower Value|Lower Char|Upper Value|Upper Char|
-|---|:---:|---|:---:|
 |`0x0219`|&#x0219;|`0x0218`|&#x0218;|
 |`0x021B`|&#x021B;|`0x021A`|&#x021A;|
-
-```
-// Lower to upper case
-switch (character) {
-    case 0x0219:
-    case 0x021B:
-        character -= 1;
-}
-
-// Upper to lower case
-switch (character) {
-    case 0x0218:
-    case 0x021A:
-        character += 1;
-}
-```
-
-## Latin Extended B Miscellaneous
-
-|Lower Value|Lower Char|Upper Value|Upper Char|
-|---|:---:|---|:---:|
+|`0x021D`|&#x021D;|`0x021C`|&#x021C;|
+|`0x021F`|&#x021F;|`0x021E`|&#x021E;|
+|`0x0223`|&#x0223;|`0x0222`|&#x0222;|
+|`0x0225`|&#x0225;|`0x0224`|&#x0224;|
+|`0x0227`|&#x0227;|`0x0226`|&#x0226;|
+|`0x0229`|&#x0229;|`0x0228`|&#x0228;|
+|`0x022B`|&#x022B;|`0x022A`|&#x022A;|
+|`0x022D`|&#x022D;|`0x022C`|&#x022C;|
+|`0x022F`|&#x022F;|`0x022E`|&#x022E;|
+|`0x0231`|&#x0231;|`0x0230`|&#x0230;|
+|`0x0233`|&#x0233;|`0x0232`|&#x0232;|
+|`0x023C`|&#x023C;|`0x023B`|&#x023B;|
+|`0x0242`|&#x0242;|`0x0241`|&#x0241;|
+|`0x0247`|&#x0247;|`0x0246`|&#x0246;|
+|`0x0249`|&#x0249;|`0x0248`|&#x0248;|
+|`0x024B`|&#x024B;|`0x024A`|&#x024A;|
+|`0x024D`|&#x024D;|`0x024C`|&#x024C;|
+|`0x024F`|&#x024F;|`0x024E`|&#x024E;|

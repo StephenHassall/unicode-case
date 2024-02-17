@@ -5,11 +5,18 @@
 #ifndef UNICODE_CASE_TEST_DATA
 #define UNICODE_CASE_TEST_DATA
 
+/**
+ * All lower case characters as in a single string.
+ */
 extern const wchar_t* allLowerCaseCharacters;
+
+/**
+ * All upper case characters as in a single string.
+ */
 extern const wchar_t* allUpperCaseCharacters;
 
 /**
- * Array of upper and lower case pairs.
+ * Upper and lower case pairs structure.
  */
 struct upperLowerCasePair
 {
@@ -19,9 +26,14 @@ struct upperLowerCasePair
     unsigned long upperChar;
 };
 
+/**
+ * Array of upper and lower case pairs.
+ */
 extern struct upperLowerCasePair upperLowerCasePairList[];
 
-// Number of items in the list
-extern int upperLowerCasePairListSize;
+/**
+ * The number of upper lower case pairs in the list
+ */
+extern int upperLowerCasePairListCount;
 
 #endif

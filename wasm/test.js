@@ -9,7 +9,7 @@ import UnicodeCase from './unicode-case.js';
 
 // Define the range of unicode characters to scan
 const UNICODE_CHARACTER_FROM = 0x0001;
-const UNICODE_CHARACTER_TO = 0x00FE;
+const UNICODE_CHARACTER_TO = 0xFFFF;
 
 // Create unicode case object
 const unicodeCase = new UnicodeCase();
@@ -47,7 +47,7 @@ const testIsLower = function () {
         if (functionFound == manualFound) continue;
 
         // If we get here then there is an error
-        console.log("isLower error: " + character.toString());
+        console.log("isLower error: 0x" + character.toString(16));
 
         // Stop here
         return;
@@ -87,7 +87,7 @@ const testIsUpper = function () {
         if (functionFound == manualFound) continue;
 
         // If we get here then there is an error
-        console.log("isUpper error: " + character.toString());
+        console.log("isUpper error: 0x" + character.toString(16));
 
         // Stop here
         return;
@@ -127,7 +127,7 @@ const testToLower = function () {
             // Make sure the lower case character is the same as the starting character
             if (lowerCaseCharacter !== character) {
                 // Log error and stop
-                console.log('toLower error ' + character.toString() + ' > ' + lowerCaseCharacter.toString());
+                console.log('toLower error 0x' + character.toString(16) + ' > 0x' + lowerCaseCharacter.toString(16));
                 return;
             }
 
@@ -139,7 +139,7 @@ const testToLower = function () {
         if (lowerCaseCharacter === foundPair.lowerChar) continue;
 
         // Log error and stop
-        console.log('toLower error ' + character.toString() + ' > ' + lowerCaseCharacter.toString() + ' ? ' + foundPair.lowerChar.toString());
+        console.log('toLower error 0x' + character.toString(16) + ' > 0x' + lowerCaseCharacter.toString(16) + ' ? 0x' + foundPair.lowerChar.toString(16));
 
         // Stop here
         return;
@@ -179,7 +179,7 @@ const testToUpper = function () {
             // Make sure the upper case character is the same as the starting character
             if (upperCaseCharacter !== character) {
                 // Log error and stop
-                console.log('toLower error ' + character.toString() + ' > ' + upperCaseCharacter.toString());
+                console.log('toLower error 0x' + character.toString(16) + ' > 0x' + upperCaseCharacter.toString(16));
                 return;
             }
 
@@ -191,7 +191,7 @@ const testToUpper = function () {
         if (upperCaseCharacter === foundPair.upperChar) continue;
 
         // Log error and stop
-        console.log('toUpper error ' + character.toString() + ' > ' + upperCaseCharacter.toString() + ' ? ' + foundPair.upperChar.toString());
+        console.log('toUpper error 0x' + character.toString(16) + ' > 0x' + upperCaseCharacter.toString(16) + ' ? 0x' + foundPair.upperChar.toString(16));
 
         // Stop here
         return;
@@ -262,6 +262,8 @@ const testUpperToLower = function () {
 const run = async function() {
     // Load unicode case
     await unicodeCase.load();
+
+    unicodeCase.toLower(0x101);
 
     // Perform the tests
     testIsLower();

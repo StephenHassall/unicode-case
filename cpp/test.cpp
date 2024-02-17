@@ -10,14 +10,14 @@
 
 // Define the range of unicode characters to scan
 #define UNICODE_CHARACTER_FROM  0x0001
-#define UNICODE_CHARACTER_TO    0x00FE
+#define UNICODE_CHARACTER_TO    0xFFFF
 
 /**
  * Test the isLower function.
  */
 void testIsLower() {
     // For each unicode character
-    for (wchar_t character = UNICODE_CHARACTER_FROM; character <= UNICODE_CHARACTER_TO; character++) {
+    for (int character = UNICODE_CHARACTER_FROM; character <= UNICODE_CHARACTER_TO; character++) {
         // First step is to perform a manual check, using the list of lower and upper case
         // pairs, to see if the character is lower case or not
 
@@ -25,7 +25,7 @@ void testIsLower() {
         bool manualFound = false;
 
         // For each upper lower case pair
-        for (int index = 0; index < upperLowerCasePairListSize; index++) {
+        for (int index = 0; index < upperLowerCasePairListCount; index++) {
             // Get upper lower case pair
             upperLowerCasePair pair = upperLowerCasePairList[index];
 
@@ -45,7 +45,7 @@ void testIsLower() {
         if (functionFound == manualFound) continue;
 
         // If we get here then there is an error
-        printf("isLower error: %ld\n", character);
+        printf("isLower error: 0x%04X\n", character);
 
         // Stop here
         return;
@@ -57,7 +57,7 @@ void testIsLower() {
  */
 void testIsUpper() {
     // For each unicode character
-    for (wchar_t character = UNICODE_CHARACTER_FROM; character <= UNICODE_CHARACTER_TO; character++) {
+    for (int character = UNICODE_CHARACTER_FROM; character <= UNICODE_CHARACTER_TO; character++) {
         // First step is to perform a manual check, using the list of lower and upper case
         // pairs, to see if the character is upper case or not
 
@@ -65,7 +65,7 @@ void testIsUpper() {
         bool manualFound = false;
 
         // For each upper lower case pair
-        for (int index = 0; index < upperLowerCasePairListSize; index++) {
+        for (int index = 0; index < upperLowerCasePairListCount; index++) {
             // Get upper lower case pair
             upperLowerCasePair pair = upperLowerCasePairList[index];
 
@@ -85,7 +85,7 @@ void testIsUpper() {
         if (functionFound == manualFound) continue;
 
         // If we get here then there is an error
-        printf("isUpper error: %ld\n", character);
+        printf("isUpper error: 0x%04X\n", character);
 
         // Stop here
         return;
@@ -97,14 +97,14 @@ void testIsUpper() {
  */
 void testToLower() {
     // For each unicode character
-    for (wchar_t character = UNICODE_CHARACTER_FROM; character <= UNICODE_CHARACTER_TO; character++) {
+    for (int character = UNICODE_CHARACTER_FROM; character <= UNICODE_CHARACTER_TO; character++) {
         // First step is to look for the pair that has a upper case character
 
         // Set found pair
         upperLowerCasePair* foundPair = NULL;
 
         // For each upper lower case pair
-        for (int index = 0; index < upperLowerCasePairListSize; index++) {
+        for (int index = 0; index < upperLowerCasePairListCount; index++) {
             // Get upper lower case pair
             upperLowerCasePair pair = upperLowerCasePairList[index];
 
@@ -125,7 +125,7 @@ void testToLower() {
             // Make sure the lower case character is the same as the starting character
             if (lowerCaseCharacter != character) {
                 // Log error and stop
-                printf("toLower: %ld > %ld\n", character, lowerCaseCharacter);
+                printf("toLower: 0x%04X > 0x%04X\n", character, lowerCaseCharacter);
                 return;
             }
 
@@ -137,7 +137,7 @@ void testToLower() {
         if (lowerCaseCharacter == foundPair->lowerText) continue;
 
         // Log error and stop
-        printf("toLower error %ld > %ld ? %ld", character, lowerCaseCharacter, foundPair->lowerChar);
+        printf("toLower error 0x%04X > 0x%04X ? 0x%04X", character, lowerCaseCharacter, foundPair->lowerChar);
 
         // Stop here
         return;
@@ -149,14 +149,14 @@ void testToLower() {
  */
 void testToUpper() {
     // For each unicode character
-    for (wchar_t character = UNICODE_CHARACTER_FROM; character <= UNICODE_CHARACTER_TO; character++) {
+    for (int character = UNICODE_CHARACTER_FROM; character <= UNICODE_CHARACTER_TO; character++) {
         // First step is to look for the pair that has a lower case character
 
         // Set found pair
         upperLowerCasePair* foundPair = NULL;
 
         // For each upper lower case pair
-        for (int index = 0; index < upperLowerCasePairListSize; index++) {
+        for (int index = 0; index < upperLowerCasePairListCount; index++) {
             // Get upper lower case pair
             upperLowerCasePair pair = upperLowerCasePairList[index];
 
@@ -177,7 +177,7 @@ void testToUpper() {
             // Make sure the upper case character is the same as the starting character
             if (upperCaseCharacter != character) {
                 // Log error and stop
-                printf("toUpper: %ld > %ld\n", character, upperCaseCharacter);
+                printf("toUpper: 0x%04X > 0x%04X\n", character, upperCaseCharacter);
                 return;
             }
 
@@ -189,7 +189,7 @@ void testToUpper() {
         if (upperCaseCharacter == foundPair->upperText) continue;
 
         // Log error and stop
-        printf("toUpper error %ld > %ld ? %ld", character, upperCaseCharacter, foundPair->upperChar);
+        printf("toUpper error 0x%04X > 0x%04X ? 0x%04X\n", character, upperCaseCharacter, foundPair->upperChar);
 
         // Stop here
         return;
