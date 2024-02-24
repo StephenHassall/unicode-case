@@ -19,6 +19,7 @@ The functions are written in `C/C++` and `WASM/WAT`.
 
 - There are some characters that are called lower case but have no upper case version. These are not included in the functions. For example, calling `uncode_case_is_lower` on one of these characters will return false, even though they are technically lower case.
 - There are two lists. The lower to upper case which is ordered by the lower case character. The upper to lower case which is ordered by the upper case character.
+- There are currently 706 unicode characters handled.
 
 
 

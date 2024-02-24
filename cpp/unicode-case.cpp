@@ -28,22 +28,27 @@ bool unicode_case_is_lower(wchar_t character) {
         if (character >= 0x017A && character <= 0x017E && isOdd == false) return true;
     }
 
-    // Latin Extended B
+    // Latin Extended B and IPA Extensions
     if (character < 0x0180) return false;
-    if (character >= 0x0180 && character <= 0x024F) {
+    if (character >= 0x0180 && character <= 0x0292) {
+        if (character == 0x0180) return true;
         if (character >= 0x0183 && character <= 0x0185 && isOdd == true) return true;
         if (character == 0x0188) return true;
         if (character == 0x018C) return true;
         if (character == 0x0192) return true;
         if (character == 0x0199) return true;
+        if (character == 0x019A) return true;
+        if (character == 0x019E) return true;
         if (character >= 0x01A1 && character <= 0x01A5 && isOdd == true) return true;
         if (character == 0x01A8) return true;
+        if (character == 0x01A9) return true;
         if (character == 0x01AD) return true;
         if (character == 0x01B0) return true;
         if (character == 0x01B4) return true;
         if (character == 0x01B6) return true;
         if (character == 0x01B9) return true;
         if (character == 0x01BD) return true;
+        if (character == 0x01BF) return true;
         if (character == 0x01C6) return true;
         if (character == 0x01C9) return true;
         if (character == 0x01CC) return true;
@@ -51,12 +56,106 @@ bool unicode_case_is_lower(wchar_t character) {
         if (character >= 0x01DF && character <= 0x01EF && isOdd == true) return true;
         if (character == 0x01F3) return true;
         if (character == 0x01F5) return true;
-        if (character >= 0x01F9 && character <= 0x01FF && isOdd == true) return true;
-        if (character >= 0x0201 && character <= 0x021F && isOdd == true) return true;
+        if (character >= 0x01F9 && character <= 0x021F && isOdd == true) return true;
         if (character >= 0x0223 && character <= 0x0233 && isOdd == true) return true;
         if (character == 0x023C) return true;
+        if (character == 0x023F) return true;
+        if (character == 0x0240) return true;
         if (character == 0x0242) return true;
         if (character >= 0x0247 && character <= 0x024F && isOdd == true) return true;
+        if (character >= 0x0250 && character <= 0x0259 && character != 0x0254) return true;
+        if (character == 0x025B) return true;
+        if (character == 0x0260) return true;
+        if (character == 0x0263) return true;
+        if (character == 0x0265) return true;
+        if (character >= 0x0268 && character <= 0x026A) return true;
+        if (character == 0x026F) return true;
+        if (character == 0x0271) return true;
+        if (character == 0x0272) return true;
+        if (character == 0x0275) return true;
+        if (character == 0x027D) return true;
+        if (character == 0x0280) return true;
+        if (character >= 0x0288 && character <= 0x028C) return true;
+        if (character == 0x0292) return true;
+        if (character == 0x0294) return true;        
+    }
+
+    // Greek and Coptic
+    if (character < 0x03AC) return false;
+    if (character >= 0x03AC && character <= 0x03EF) {
+        if (character >= 0x03AC && character <= 0x03AF) return true;
+        if (character >= 0x03B1 && character <= 0x03C1) return true;
+        if (character >= 0x03C3 && character <= 0x03CE) return true;
+        if (character >= 0x03E3 && character <= 0x03EF && isOdd == true) return true;
+    }
+
+    // Cyrillic
+    if (character < 0x0430) return false;
+    if (character >= 0x0430 && character <= 0x04F9) {
+        if (character >= 0x0430 && character <= 0x044F) return true;
+        if (character >= 0x0451 && character <= 0x045C) return true;
+        if (character == 0x045E) return true;
+        if (character >= 0x045F && character <= 0x0481 && isOdd == true) return true;
+        if (character >= 0x0491 && character <= 0x04BF && isOdd == true) return true;
+        if (character == 0x04C2) return true;
+        if (character == 0x04C4) return true;
+        if (character == 0x04C8) return true;
+        if (character == 0x04CC) return true;
+        if (character >= 0x04D1 && character <= 0x04EB && isOdd == true) return true;
+        if (character >= 0x04EF && character <= 0x04F5 && isOdd == true) return true;
+        if (character == 0x04F9) return true;
+    }
+
+    // Armenian
+    if (character < 0x0561) return false;
+    if (character >= 0x0561 && character <= 0x0586) {
+        return true;
+    }
+
+    // Georgian
+    if (character < 0x10D0) return false;
+    if (character >= 0x10D0 && character <= 0x10F5) {
+        return true;
+    }
+
+    // Latin Extended Additional
+    if (character < 0x1E01) return false;
+    if (character >= 0x1E01 && character <= 0x1EF9) {
+        if (character >= 0x1E01 && character <= 0x1E95 && isOdd == true) return true;
+        if (character >= 0x1EA1 && character <= 0x1EF9 && isOdd == true) return true;
+    }
+
+    // Greek Extended
+    if (character < 0x1F00) return false;
+    if (character >= 0x1F00 && character <= 0x1FE1) {
+        if (character >= 0x1F00 && character <= 0x1F07) return true;
+        if (character >= 0x1F10 && character <= 0x1F15) return true;
+        if (character >= 0x1F20 && character <= 0x1F27) return true;
+        if (character >= 0x1F30 && character <= 0x1F37) return true;
+        if (character >= 0x1F40 && character <= 0x1F45) return true;
+        if (character >= 0x1F51 && character <= 0x1F57 && isOdd == true) return true;
+        if (character >= 0x1F60 && character <= 0x1F67) return true;
+        if (character >= 0x1F80 && character <= 0x1F87) return true;
+        if (character >= 0x1F90 && character <= 0x1F97) return true;
+        if (character >= 0x1FA0 && character <= 0x1FA7) return true;
+        if (character >= 0x1FB0) return true;
+        if (character >= 0x1FB1) return true;
+        if (character >= 0x1FD0) return true;
+        if (character >= 0x1FD1) return true;
+        if (character >= 0x1FF0) return true;
+        if (character >= 0x1FF1) return true;
+    }
+
+    // Encloded Alphanumerics
+    if (character < 0x24D0) return false;
+    if (character >= 0x24D0 && character <= 0x24E9) {
+        return;
+    }
+
+    // Halwidth and Fullwidth Forms
+    if (character < 0xFF41) return false;
+    if (character >= 0xFF41 && character <= 0xFF5A) {
+        return;
     }
 
     // Must be something other than lower case

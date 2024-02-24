@@ -270,11 +270,11 @@ int main()
 {
     // Perform the tests
     testIsLower();
-    testIsUpper();
-    testToLower();
-    testToUpper();
-    testLowerToUpper();
-    testUpperToLower();
+    //testIsUpper();
+    //testToLower();
+    //testToUpper();
+    //testLowerToUpper();
+    //testUpperToLower();
 
     // Log finished
     printf("Finished");

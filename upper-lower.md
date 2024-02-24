@@ -113,6 +113,7 @@ Below is a list of all the characters in upper case and their matching lower cas
 |`0x012A`|&#x012A;|`0x012B`|&#x012B;|
 |`0x012C`|&#x012C;|`0x012D`|&#x012D;|
 |`0x012E`|&#x012E;|`0x012F`|&#x012F;|
+|`0x0130`|&#x0130;|`0x0131`|&#x0131;|
 |`0x0132`|&#x0132;|`0x0133`|&#x0133;|
 |`0x0134`|&#x0134;|`0x0135`|&#x0135;|
 |`0x0136`|&#x0136;|`0x0137`|&#x0137;|
