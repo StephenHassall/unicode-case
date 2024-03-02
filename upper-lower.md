@@ -194,7 +194,6 @@ This contains items from IPA Extensions.
 |`0x01B7`|&#x01B7;|`0x0292`|&#x0292;|
 |`0x01B8`|&#x01B8;|`0x01B9`|&#x01B9;|
 |`0x01BC`|&#x01BC;|`0x01BD`|&#x01BD;|
-|`0x01F7`|&#x01F7;|`0x01BF`|&#x01BF;|
 |`0x01C4`|&#x01C4;|`0x01C6`|&#x01C6;|
 |`0x01C7`|&#x01C7;|`0x01C9`|&#x01C9;|
 |`0x01CA`|&#x01CA;|`0x01CC`|&#x01CC;|
@@ -217,6 +216,7 @@ This contains items from IPA Extensions.
 |`0x01EE`|&#x01EE;|`0x01EF`|&#x01EF;|
 |`0x01F1`|&#x01F1;|`0x01F3`|&#x01F3;|
 |`0x01F4`|&#x01F4;|`0x01F5`|&#x01F5;|
+|`0x01F7`|&#x01F7;|`0x01BF`|&#x01BF;|
 |`0x01F8`|&#x01F8;|`0x01F9`|&#x01F9;|
 |`0x01FA`|&#x01FA;|`0x01FB`|&#x01FB;|
 |`0x01FC`|&#x01FC;|`0x01FD`|&#x01FD;|
@@ -279,6 +279,9 @@ This contains items from IPA Extensions.
 |`0x0388`|&#x0388;|`0x03AD`|&#x03AD;|
 |`0x0389`|&#x0389;|`0x03AE`|&#x03AE;|
 |`0x038A`|&#x038A;|`0x03AF`|&#x03AF;|
+|`0x038C`|&#x038C;|`0x03CC`|&#x03CC;|
+|`0x038E`|&#x038E;|`0x03CD`|&#x03CD;|
+|`0x038F`|&#x038F;|`0x03CE`|&#x03CE;|
 |`0x0391`|&#x0391;|`0x03B1`|&#x03B1;|
 |`0x0392`|&#x0392;|`0x03B2`|&#x03B2;|
 |`0x0393`|&#x0393;|`0x03B3`|&#x03B3;|
@@ -305,9 +308,6 @@ This contains items from IPA Extensions.
 |`0x03A9`|&#x03A9;|`0x03C9`|&#x03C9;|
 |`0x03AA`|&#x03AA;|`0x03CA`|&#x03CA;|
 |`0x03AB`|&#x03AB;|`0x03CB`|&#x03CB;|
-|`0x038C`|&#x038C;|`0x03CC`|&#x03CC;|
-|`0x038E`|&#x038E;|`0x03CD`|&#x03CD;|
-|`0x038F`|&#x038F;|`0x03CE`|&#x03CE;|
 |`0x03E2`|&#x03E2;|`0x03E3`|&#x03E3;|
 |`0x03E4`|&#x03E4;|`0x03E5`|&#x03E5;|
 |`0x03E6`|&#x03E6;|`0x03E7`|&#x03E7;|

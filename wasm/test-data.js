@@ -89,9 +89,9 @@ export const allUpperCaseCharacters =
     "ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ";
 
 /**
- * Array of upper and lower case pairs.
+ * Array of lower case and upper case pairs.
  */
-export const upperLowerCasePairList = [
+export const lowerUpperCasePairList = [
     // Basic Latin
     { lowerText: 'a', lowerChar: 0x0061, upperText: 'A', upperChar: 0x0041 },
     { lowerText: 'b', lowerChar: 0x0062, upperText: 'B', upperChar: 0x0042 },

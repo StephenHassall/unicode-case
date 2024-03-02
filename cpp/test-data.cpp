@@ -91,9 +91,9 @@ const wchar_t* allUpperCaseCharacters =
     L"ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ";
 
 /**
- * Array of upper and lower case pairs.
+ * Array of lower and upper case pairs.
  */
-struct upperLowerCasePair upperLowerCasePairList[] = {
+struct lowerUpperCasePair lowerUpperCasePairList[] = {
     // Basic Latin
     { L'a', 0x0061, L'A', 0x0041 },
     { L'b', 0x0062, L'B', 0x0042 },
@@ -831,6 +831,6 @@ struct upperLowerCasePair upperLowerCasePairList[] = {
 };
 
 /**
- * The number of upper lower case pairs in the list
+ * The number of lower upper case pairs in the list
  */
-int upperLowerCasePairListCount = sizeof(upperLowerCasePairList) / sizeof(upperLowerCasePair);
+int lowerUpperCasePairListCount = sizeof(lowerUpperCasePairList) / sizeof(lowerUpperCasePair);

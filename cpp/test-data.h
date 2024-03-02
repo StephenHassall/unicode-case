@@ -16,9 +16,9 @@ extern const wchar_t* allLowerCaseCharacters;
 extern const wchar_t* allUpperCaseCharacters;
 
 /**
- * Upper and lower case pairs structure.
+ * Lower and upper case pairs structure.
  */
-struct upperLowerCasePair
+struct lowerUpperCasePair
 {
     wchar_t lowerText;
     unsigned long lowerChar;
@@ -27,13 +27,13 @@ struct upperLowerCasePair
 };
 
 /**
- * Array of upper and lower case pairs.
+ * Array of lower and upper case pairs.
  */
-extern struct upperLowerCasePair upperLowerCasePairList[];
+extern struct lowerUpperCasePair lowerUpperCasePairList[];
 
 /**
- * The number of upper lower case pairs in the list
+ * The number of lower upper case pairs in the list
  */
-extern int upperLowerCasePairListCount;
+extern int lowerUpperCasePairListCount;
 
 #endif

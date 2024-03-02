@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unicode Case WASM Test</title>
+</head>
+<body>
+</body>
+<script type="module">
+  // Load in and create instance of unicode-case.wasm file
+  const wasm = await WebAssembly.instantiateStreaming(fetch('unicode-case.wasm'));
+
+  // Debug testing
+  const result = wasm.instance.exports.unicode_case_is_lower(0x1FB0);
+
+  // Log result
+  console.log(result);
+
+</script>
+</html>

@@ -4,7 +4,7 @@
 
 import { allLowerCaseCharacters } from "./test-data.js";
 import { allUpperCaseCharacters } from "./test-data.js";
-import { upperLowerCasePairList } from "./test-data.js";
+import { lowerUpperCasePairList } from "./test-data.js";
 import UnicodeCase from './unicode-case.js';
 
 // Define the range of unicode characters to scan
@@ -26,10 +26,10 @@ const testIsLower = function () {
         // Set manual found as not not found yet
         let manualFound = false;
 
-        // For each upper lower case pair
-        for (let index = 0; index < upperLowerCasePairList.length; index++) {
-            // Get upper lower case pair
-            let pair = upperLowerCasePairList[index];
+        // For each lower upper case pair
+        for (let index = 0; index < lowerUpperCasePairList.length; index++) {
+            // Get lower upper case pair
+            let pair = lowerUpperCasePairList[index];
 
             // If not found
             if (pair.lowerChar != character) continue;
@@ -66,10 +66,10 @@ const testIsUpper = function () {
         // Set manual found as not not found yet
         let manualFound = false;
 
-        // For each upper lower case pair
-        for (let index = 0; index < upperLowerCasePairList.length; index++) {
-            // Get upper lower case pair
-            let pair = upperLowerCasePairList[index];
+        // For each lower upper case pair
+        for (let index = 0; index < lowerUpperCasePairList.length; index++) {
+            // Get lower upper case pair
+            let pair = lowerUpperCasePairList[index];
 
             // If not found
             if (pair.upperChar != character) continue;
@@ -105,10 +105,10 @@ const testToLower = function () {
         // Set found pair
         let foundPair = null;
 
-        // For each upper lower case pair
-        for (let index = 0; index < upperLowerCasePairList.length; index++) {
-            // Get upper lower case pair
-            let pair = upperLowerCasePairList[index];
+        // For each lower upper case pair
+        for (let index = 0; index < lowerUpperCasePairList.length; index++) {
+            // Get lower upper case pair
+            let pair = lowerUpperCasePairList[index];
 
             // If not found
             if (pair.upperChar != character) continue;
@@ -157,10 +157,10 @@ const testToUpper = function () {
         // Set found pair
         let foundPair = null;
 
-        // For each upper lower case pair
-        for (let index = 0; index < upperLowerCasePairList.length; index++) {
-            // Get upper lower case pair
-            let pair = upperLowerCasePairList[index];
+        // For each lower upper case pair
+        for (let index = 0; index < lowerUpperCasePairList.length; index++) {
+            // Get lower upper case pair
+            let pair = lowerUpperCasePairList[index];
 
             // If not found
             if (pair.lowerChar != character) continue;
@@ -262,8 +262,6 @@ const testUpperToLower = function () {
 const run = async function() {
     // Load unicode case
     await unicodeCase.load();
-
-    unicodeCase.toLower(0x101);
 
     // Perform the tests
     testIsLower();

@@ -13,7 +13,16 @@ This contains the following functions.
 |`unicode_case_to_lower`|Returns the given character or the lower case version of it.|
 |`unicode_case_to_upper`|Returns the given character or the upper case version of it.|
 
-The functions are written in `C/C++` and `WASM/WAT`.
+The functions are written in `C/C++` and `WebAssembly WAT`.
+
+This also contains test data you can use to check your code. Included is the following.
+
+|Name|Details|
+|---|---|
+|`allLowerCaseCharacters`|A string contains all the lower case characters.|
+|`allUpperCaseCharacters`|A string contains all the upper case characters.|
+|`lowerUpperCasePairList`|List of all the lower case characters with their upper case pair.|
+
 
 ## Notes
 

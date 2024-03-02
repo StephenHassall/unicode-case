@@ -1,6 +1,6 @@
 # Unicode Non-Case Characters
 
-Below are all the cases that are labelled as lower case, but have no upper case pair, and those labelled upper case, but with not lower case pair.
+Below are all the characters that are labelled as lower case, but have no upper case pair, and those labelled upper case, but with not lower case pair.
 
 There are some other characters that have no case but are still letters.
 

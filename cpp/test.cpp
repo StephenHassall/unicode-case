@@ -24,10 +24,10 @@ void testIsLower() {
         // Set manual found as not not found yet
         bool manualFound = false;
 
-        // For each upper lower case pair
-        for (int index = 0; index < upperLowerCasePairListCount; index++) {
-            // Get upper lower case pair
-            upperLowerCasePair pair = upperLowerCasePairList[index];
+        // For each lower upper case pair
+        for (int index = 0; index < lowerUpperCasePairListCount; index++) {
+            // Get lower upper case pair
+            lowerUpperCasePair pair = lowerUpperCasePairList[index];
 
             // If not found
             if (pair.lowerText != character) continue;
@@ -64,10 +64,10 @@ void testIsUpper() {
         // Set manual found as not not found yet
         bool manualFound = false;
 
-        // For each upper lower case pair
-        for (int index = 0; index < upperLowerCasePairListCount; index++) {
-            // Get upper lower case pair
-            upperLowerCasePair pair = upperLowerCasePairList[index];
+        // For each lower upper case pair
+        for (int index = 0; index < lowerUpperCasePairListCount; index++) {
+            // Get lower upper case pair
+            lowerUpperCasePair pair = lowerUpperCasePairList[index];
 
             // If not found
             if (pair.upperText != character) continue;
@@ -101,12 +101,12 @@ void testToLower() {
         // First step is to look for the pair that has a upper case character
 
         // Set found pair
-        upperLowerCasePair* foundPair = NULL;
+        lowerUpperCasePair* foundPair = NULL;
 
-        // For each upper lower case pair
-        for (int index = 0; index < upperLowerCasePairListCount; index++) {
-            // Get upper lower case pair
-            upperLowerCasePair pair = upperLowerCasePairList[index];
+        // For each lower upper case pair
+        for (int index = 0; index < lowerUpperCasePairListCount; index++) {
+            // Get lower upper case pair
+            lowerUpperCasePair pair = lowerUpperCasePairList[index];
 
             // If not found
             if (pair.upperChar != character) continue;
@@ -137,7 +137,7 @@ void testToLower() {
         if (lowerCaseCharacter == foundPair->lowerText) continue;
 
         // Log error and stop
-        printf("toLower error 0x%04X > 0x%04X ? 0x%04X", character, lowerCaseCharacter, foundPair->lowerChar);
+        printf("toLower error 0x%04X > 0x%04X ? 0x%04X\n", character, lowerCaseCharacter, foundPair->lowerChar);
 
         // Stop here
         return;
@@ -153,12 +153,12 @@ void testToUpper() {
         // First step is to look for the pair that has a lower case character
 
         // Set found pair
-        upperLowerCasePair* foundPair = NULL;
+        lowerUpperCasePair* foundPair = NULL;
 
-        // For each upper lower case pair
-        for (int index = 0; index < upperLowerCasePairListCount; index++) {
-            // Get upper lower case pair
-            upperLowerCasePair pair = upperLowerCasePairList[index];
+        // For each lower upper case pair
+        for (int index = 0; index < lowerUpperCasePairListCount; index++) {
+            // Get lower upper case pair
+            lowerUpperCasePair pair = lowerUpperCasePairList[index];
 
             // If not found
             if (pair.lowerChar != character) continue;
@@ -270,11 +270,11 @@ int main()
 {
     // Perform the tests
     testIsLower();
-    //testIsUpper();
-    //testToLower();
-    //testToUpper();
-    //testLowerToUpper();
-    //testUpperToLower();
+    testIsUpper();
+    testToLower();
+    testToUpper();
+    testLowerToUpper();
+    testUpperToLower();
 
     // Log finished
     printf("Finished");
